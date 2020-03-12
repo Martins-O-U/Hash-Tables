@@ -5,16 +5,11 @@ class DynamicArray:
         self.storage = [None] * self.capacity
 
     def insert(self, index, value):
-        #Do we have open space?
         if self.count >= self.capacity:
             self.double_size()
-            #Make array dynamically resize
-        #Is index in range?
         if index >= self.capacity:
             print("ERROR: Index out of range")
             return
-        #If so, shift it all right
-        #insert value
         for i in range(self.count, index, -1):
             self.storage[i] = self.storage[i-1]
 
